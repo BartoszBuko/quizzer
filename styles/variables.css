@@ -1,0 +1,9 @@
+:root {
+  --clr-primary: hsl(186, 49%, 92%);
+  --clr-secondary: hsl(189, 86%, 53%);
+  --bcg-primary: hsl(230, 61%, 14%);
+  --bcg-secondary: hsl(230, 87%, 59%);
+  --transition-speed: 0.3s;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1440px;
+}

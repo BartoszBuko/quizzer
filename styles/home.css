@@ -1,0 +1,99 @@
+@import url("./variables.css");
+@import url("./animations.css");
+
+.main,
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  margin-top: 4rem;
+  row-gap: 5rem;
+  flex-grow: 1;
+}
+
+.main-content {
+  background-color: var(--bcg-secondary);
+  width: min(65vw, 400px);
+  padding: 1rem 2rem;
+  row-gap: 2rem;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  z-index: 2;
+}
+
+.top-content {
+  position: relative;
+}
+
+.top-content::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  height: 100%;
+  width: 4px;
+  border-radius: 100vw;
+  background-color: var(--clr-secondary);
+  -webkit-border-radius: 100vw;
+  -moz-border-radius: 100vw;
+  -ms-border-radius: 100vw;
+  -o-border-radius: 100vw;
+}
+
+.bottom-content {
+  text-align: left;
+  max-width: 300px;
+}
+
+.top-p {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 500;
+}
+
+.desc {
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+}
+
+.button-desc-tablet {
+  display: none;
+}
+.bottom-main {
+  width: 100%;
+}
+.join-now {
+  width: 100%;
+  background: var(--bcg-secondary);
+  max-width: 400px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  border: none;
+  color: inherit;
+  padding: 0.2rem 0;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.animate-join {
+  -webkit-animation: slide-out-blurred-top 0.45s
+    cubic-bezier(0.755, 0.05, 0.855, 0.06) both;
+  animation: slide-out-blurred-top 0.45s cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    both;
+}
+.animate-join-desktop {
+  -webkit-animation: scale 0.7s ease-in-out forwards;
+  animation: scale 0.7s ease-in-out forwards;
+  pointer-events: none;
+}

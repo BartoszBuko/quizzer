@@ -1,0 +1,37 @@
+@import url("./variables.css");
+
+.tablet-desc,
+.desktop-desc {
+  display: none;
+}
+
+.contact-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2em;
+  margin-bottom: 3.5rem;
+}
+
+.contact {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 400;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 2em;
+  width: fit-content;
+}
+.info {
+  font-size: clamp(1rem, 4vw, 1.8rem);
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: var(--clr-secondary);
+  font-size: clamp(1rem, 4vw, 1.8rem);
+}

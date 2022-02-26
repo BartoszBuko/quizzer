@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/quizes.css" />
+    <link rel="stylesheet" href="../styles/responsive.css" />
+
+    <title>Quizzer - Check Out!</title>
+    <script
+      src="https://kit.fontawesome.com/feb09a26ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/quizes.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <a href="../index.html" class="logo-link"
+        ><img src="../images/logo.svg" alt="logo" class="logo"
+      /></a>
+      <nav class="desktop-nav">
+        <ul class="desktop-list">
+          <li class="desktop-list-item">
+            <a href="../index.html" class="desktop-link">Home</a>
+          </li>
+          <li class="desktop-list-item">
+            <a href="#" class="desktop-link active">Quizes</a>
+          </li>
+          <li class="desktop-list-item">
+            <a href="./about.html" class="desktop-link">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <h1 class="test-your-knowledge">
+      Here you can test your
+      <p class="blue-text">knowledge</p>
+    </h1>
+    <section class="search-sort">
+      <div class="sort-by">
+        Sort by
+        <img src="../images/Arrow.svg" alt=">" />
+      </div>
+      <div class="search">
+        <input
+          type="search"
+          name="search-in"
+          id="search-in"
+          class="search-input"
+          data-search
+          placeholder="eg. animals"
+        />
+        <label for="search-in" class="glass-label"
+          ><i class="fa-solid fa-magnifying-glass"></i
+        ></label>
+      </div>
+    </section>
+    <main class="quizes-main" data-quizes-container>
+      <template data-template>
+        <article class="quiz">
+          <h2 class="quiz-name"></h2>
+          <h3 class="category"></h3>
+          <p class="quiz-desc"></p>
+        </article>
+      </template>
+    </main>
+    <nav class="mobile-nav">
+      <ul class="mobile-list">
+        <li class="mobile-list-item">
+          <a href="../index.html" class="mobile-link">Home</a>
+        </li>
+        <li class="mobile-list-item">
+          <a href="#" class="mobile-link active">Quizes</a>
+        </li>
+        <li class="mobile-list-item">
+          <a href="./about.html" class="mobile-link">About</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

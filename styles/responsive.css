@@ -1,0 +1,165 @@
+@import url("./variables.css");
+
+@media screen and (min-width: 768px) {
+  body {
+    overflow: visible;
+    overflow-x: hidden !important;
+  }
+  .mobile-nav {
+    display: none !important;
+  }
+
+  .header {
+    margin-top: 1.5rem;
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desktop-nav {
+    display: flex;
+  }
+
+  .desktop-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 15em;
+    list-style: none;
+    font-size: clamp(1rem, 2.25vw, 1.3rem);
+  }
+  .logo {
+    width: 100px;
+  }
+
+  .main-content {
+    align-items: start;
+    padding-left: 4.5em;
+    padding-bottom: 3em;
+  }
+
+  .top-content {
+    margin-left: 2rem;
+  }
+
+  .main {
+    width: min(65vw, 400px);
+  }
+
+  .button-desc-tablet {
+    display: initial;
+    font-size: clamp(1.3rem, 3.3vw, 2rem);
+    width: 80%;
+    max-width: 450px;
+    text-align: center;
+    line-height: 125%;
+  }
+  .bottom-main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4em;
+    padding-bottom: 3em;
+    align-items: center;
+  }
+
+  .blue {
+    color: var(--clr-secondary);
+    font-style: normal;
+  }
+  .quizes-main {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2em;
+    padding-bottom: 2em;
+    flex-grow: 1;
+  }
+  .quiz {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .about-main {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    margin-bottom: 1rem;
+  }
+  .main {
+    margin-bottom: 8em;
+    flex-direction: row;
+    width: fit-content;
+    column-gap: 15em;
+  }
+
+  .sort-by {
+    cursor: pointer;
+  }
+
+  .join-now {
+    z-index: 3;
+    padding: 0.5em 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    transition: background-color var(--transition-speed) ease-in-out;
+    -webkit-transition: background-color var(--transition-speed) ease-in-out;
+    -moz-transition: background-color var(--transition-speed) ease-in-out;
+    -ms-transition: background-color var(--transition-speed) ease-in-out;
+    -o-transition: background-color var(--transition-speed) ease-in-out;
+  }
+
+  .join-now:hover {
+    background-color: hsl(230, 87%, 54%);
+  }
+
+  .main-content {
+    row-gap: 4em;
+    width: 80%;
+    padding: 4em 4.8em;
+  }
+  .bottom-main {
+    row-gap: 7em;
+  }
+
+  .quizes-main {
+    margin-top: 4em;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5em;
+  }
+
+  .desktop-left {
+    border-left: 3px solid var(--clr-primary);
+    border-right: none;
+  }
+  .center {
+    border: none;
+    border-top: 3px solid var(--clr-primary);
+  }
+
+  /* naprawix animacje */
+  .quiz {
+    padding: 0.7em 1.2em;
+    transition: border-color var(--transition-speed) ease-in-out;
+    -webkit-transition: border-color var(--transition-speed) ease-in-out;
+    -moz-transition: border-color var(--transition-speed) ease-in-out;
+    -ms-transition: border-color var(--transition-speed) ease-in-out;
+    -o-transition: border-color var(--transition-speed) ease-in-out;
+  }
+
+  .quiz:hover {
+    border-color: var(--clr-secondary);
+  }
+  .about-main .main-content {
+    width: 45%;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    row-gap: 2.5em;
+    width: 450px;
+  }
+}
