@@ -108,21 +108,3 @@
     color: hsla(186, 49%, 92%, 0);
   }
 }
-
-/* naprawic animacje */
-
-@keyframes quizAnimation {
-  0%,
-  100% {
-    clip: rect(0px, 330px, 2px, 0px);
-  }
-  25% {
-    clip: rect(0px, 2px, 330px, 0px);
-  }
-  50% {
-    clip: rect(328px, 330px, 330px, 0px);
-  }
-  75% {
-    clip: rect(0px, 330px, 330px, 328px);
-  }
-}

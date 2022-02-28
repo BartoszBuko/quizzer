@@ -1,5 +1,4 @@
 @import url("./variables.css");
-@import url("./animations.css");
 
 body {
   overflow-y: visible;
@@ -57,7 +56,7 @@ body {
 
 .search-input {
   font-family: sans-serif;
-  text-transform: capitalize;
+
   outline: none;
   background: none;
   border: none;
@@ -106,29 +105,38 @@ body {
 }
 
 .quiz::before,
-.quiz:after {
+.quiz::after {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   content: "";
   z-index: -1;
   margin: -5%;
-  box-shadow: inset 0 0 0 2px;
-  animation: quizAnimation 8s linear infinite;
-  -webkit-animation: quizAnimation 8s linear infinite;
+  height: 120px;
+  width: 120px;
+  transition: var(--transition-speed) ease-in-out;
+  -webkit-transition: var(--transition-speed) ease-in-out;
+  -moz-transition: var(--transition-speed) ease-in-out;
+  -ms-transition: var(--transition-speed) ease-in-out;
+  -o-transition: var(--transition-speed) ease-in-out;
 }
 .quiz::before {
-  animation-delay: -4s;
+  left: 0;
+  top: 0;
+  box-shadow: -3px -3px var(--clr-primary);
+}
+.quiz::after {
+  right: 0;
+  bottom: 0;
+  box-shadow: 3px 3px var(--clr-primary);
 }
 
 .quiz-name {
+  text-transform: capitalize;
   font-weight: 400;
   font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
 .category {
+  text-transform: capitalize;
   font-weight: 200;
   color: var(--clr-secondary);
   font-size: clamp(1.2rem, 2vw, 1.4rem);
@@ -141,4 +149,8 @@ body {
 }
 .mobile-nav {
   padding-bottom: 2rem;
+}
+
+.hide-mobile-nav {
+  display: none;
 }

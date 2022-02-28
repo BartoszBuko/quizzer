@@ -1,6 +1,7 @@
 const quizesContainer = document.querySelector("[data-quizes-container]");
 const template = document.querySelector("[data-template]");
 const searchInput = document.querySelector("[data-search]");
+const mobileNav = document.querySelector("[data-mobile-nav]");
 
 const getData = async () => {
   const response = await fetch("../js/quizes.json");
@@ -15,8 +16,8 @@ getData().then((quizes) => {
 });
 
 searchInput.addEventListener("input", (e) => {
-  let value = e.target.value;
-  value = value.charAt(0).toUpperCase() + value.slice(1);
+  let value = e.target.value.toLowerCase();
+  mobileNav.classList.add("hide-mobile-nav");
   quizesContainer.replaceChildren();
   if (value) return searchQuizes(value);
   getData().then((quizes) => {
@@ -33,7 +34,7 @@ function renderQuiz(quiz) {
   let quizArticle = clone.firstElementChild;
 
   appendTextContents(quizArticle, quiz);
-
+  mobileNav.classList.remove("hide-mobile-nav");
   quizesContainer.appendChild(clone);
 }
 

@@ -148,8 +148,10 @@
     -o-transition: border-color var(--transition-speed) ease-in-out;
   }
 
-  .quiz:hover {
-    border-color: var(--clr-secondary);
+  .quiz:hover.quiz::before,
+  .quiz:hover.quiz::after {
+    width: calc(300px + 10%);
+    height: calc(300px + 10%);
   }
   .about-main .main-content {
     width: 45%;
