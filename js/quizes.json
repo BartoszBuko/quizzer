@@ -1,19 +1,17 @@
-{
-  "quizes": [
-    {
-      "name": "countries",
-      "category": "geography",
-      "description": "Test you geography skill with this quiz! Guess flags, capitals and more to prove that you are beast."
-    },
-    {
-      "name": "cats",
-      "category": "animals",
-      "description": "Meow. Do you like cats? Of course yes! In this quiz you will se how amazing cats are!"
-    },
-    {
-      "name": "traditions",
-      "category": "food",
-      "description": "We all know pierogi, but do you know other traditional foods in countries? Check yourself!"
-    }
-  ]
-}
+[
+  {
+    "name": "countries",
+    "category": "geography",
+    "description": "Test you geography skill with this quiz! Guess flags, capitals and more to prove that you are beast."
+  },
+  {
+    "name": "cats",
+    "category": "animals",
+    "description": "Meow. Do you like cats? Of course yes! In this quiz you will se how amazing cats are!"
+  },
+  {
+    "name": "traditions",
+    "category": "food",
+    "description": "We all know pierogi, but do you know other traditional foods in countries? Check yourself!"
+  }
+]

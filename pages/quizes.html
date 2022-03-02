@@ -40,9 +40,19 @@
       <p class="blue-text">knowledge</p>
     </h1>
     <section class="search-sort">
-      <div class="sort-by">
-        Sort by
-        <img src="../images/Arrow.svg" alt=">" />
+      <div class="sort-by-container">
+        <div class="sort-by" data-sort-by>
+          Sort by
+          <img src="../images/Arrow.svg" alt=">" class="arrow" />
+          <div class="options-slide-blue" data-slide-blue></div>
+          <div class="options-slide-text" data-slide-text>
+            <span class="options-text-dynamic">Options</span>
+          </div>
+        </div>
+
+        <div class="hidden-options" data-options>
+          <span class="option ascending">A-Z</span>
+        </div>
       </div>
       <div class="search">
         <input
@@ -61,9 +71,9 @@
     <main class="quizes-main" data-quizes-container>
       <template data-template>
         <article class="quiz">
-          <h2 class="quiz-name"></h2>
-          <h3 class="category"></h3>
-          <p class="quiz-desc"></p>
+          <h2 class="quiz-name" data-name></h2>
+          <h3 class="category" data-category></h3>
+          <p class="quiz-desc" data-desc></p>
         </article>
       </template>
     </main>

@@ -98,6 +98,22 @@
     cursor: pointer;
   }
 
+  .sort-by > img {
+    transition: transform var(--transition-speed) ease-in-out;
+    -webkit-transition: transform var(--transition-speed) ease-in-out;
+    -moz-transition: transform var(--transition-speed) ease-in-out;
+    -ms-transition: transform var(--transition-speed) ease-in-out;
+    -o-transition: transform var(--transition-speed) ease-in-out;
+  }
+
+  .sort-by:hover > img {
+    transform: translateX(6px);
+    -webkit-transform: translateX(6px);
+    -moz-transform: translateX(6px);
+    -ms-transform: translateX(6px);
+    -o-transform: translateX(6px);
+  }
+
   .join-now {
     z-index: 3;
     padding: 0.5em 0;

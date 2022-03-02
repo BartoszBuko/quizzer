@@ -3,7 +3,6 @@ const body = document.querySelector("body");
 
 joinNowBtn.addEventListener("click", () => {
   if (window.innerWidth >= 1440) {
-    joinNowBtn.href = "#";
     body.style.overflow = "hidden";
     joinNowBtn.classList.add("animate-join-desktop");
     setTimeout(() => {
