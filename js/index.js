@@ -1,7 +1,7 @@
 const joinNowBtn = document.querySelector("[data-join-now]");
 const body = document.querySelector("body");
 
-let isVisited = false;
+window.location.reload();
 
 joinNowBtn.addEventListener("click", () => {
   if (window.innerWidth >= 1440) {
@@ -20,9 +20,4 @@ joinNowBtn.addEventListener("click", () => {
       isVisited = true;
     }, 500);
   }
-});
-
-window.addEventListener("DOMContentLoaded", () => {
-  if (isVisited) console.log("reload");
-  isVisited = false;
 });
