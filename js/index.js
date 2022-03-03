@@ -3,9 +3,13 @@ const body = document.querySelector("body");
 
 const perfEntries = performance.getEntriesByType("navigation");
 
-if (perfEntries[0].type === "back_forward") {
-  location.reload(true);
-}
+(function () {
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+})();
 
 joinNowBtn.addEventListener("click", () => {
   if (window.innerWidth >= 1440) {
