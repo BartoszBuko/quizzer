@@ -6,13 +6,16 @@ const sortByBtn = document.querySelector("[data-sort-by]");
 const slideBlueDiv = document.querySelector("[data-slide-blue]");
 const slideTextDiv = document.querySelector("[data-slide-text]");
 const optionsContainer = document.querySelector("[data-options]");
+const options = document.querySelectorAll("[data-option]");
 let areOptionsOpened = false;
 
 let quizesArray = [];
+let modifiedQuizes = [];
 
 const getData = async () => {
   const response = await fetch("../js/quizes.json");
   const quizes = await response.json();
+  quizesArray = quizes;
   return renderQuizes(quizes);
 };
 
@@ -37,12 +40,14 @@ sortByBtn.addEventListener("click", () => {
 
 document.body.addEventListener("click", (e) => {
   if (e.target.matches(".sort-by")) return;
-  if (areOptionsOpened && e.target.matches(".ascending")) {
-    handleAscending();
+  if (e.target.parentElement.id === "options") {
+    checkOption(e.target);
     removeOptions();
+
     areOptionsOpened = false;
     return;
   }
+
   removeOptions();
   areOptionsOpened = false;
 });
@@ -50,7 +55,7 @@ document.body.addEventListener("click", (e) => {
 // render quizes from json document
 
 function renderQuizes(quizes) {
-  quizesArray = quizes.map((quiz) => {
+  modifiedQuizes = quizes.map((quiz) => {
     const quizArticle = template.content.cloneNode(true).children[0];
     const name = quizArticle.querySelector("[data-name]");
     const category = quizArticle.querySelector("[data-category]");
@@ -71,7 +76,7 @@ function renderQuizes(quizes) {
 // search functionality for quizes
 
 function searchQuizes(searchValue) {
-  quizesArray.forEach((quiz) => {
+  modifiedQuizes.forEach((quiz) => {
     let isQuizFounded =
       quiz.name.includes(searchValue) || quiz.category.includes(searchValue);
     quiz.element.classList.toggle("hide-quiz", !isQuizFounded);
@@ -87,6 +92,20 @@ function removeQuizes() {
 
 // sort by
 
+function checkOption(target) {
+  if (target.classList.contains("bold-option")) {
+    target.classList.remove("bold-option");
+    removeQuizes();
+    return renderQuizes(quizesArray);
+  }
+  options.forEach((option) => {
+    option.classList.remove("bold-option");
+  });
+
+  if (target.matches(".ascending")) return handleAscending(target);
+  if (target.matches(".descending")) return handleDescending(target);
+}
+
 function appendOptions() {
   slideBlueDiv.classList.add("transform-options-blue");
   slideTextDiv.classList.add("transform-options-text");
@@ -98,17 +117,35 @@ function removeOptions() {
   optionsContainer.classList.remove("transform-options");
 }
 
-function handleAscending() {
+function handleAscending(target) {
+  target.classList.add("bold-option");
   removeQuizes();
-  quizesArray.sort(GetSortOrder("name"));
-  renderQuizes(quizesArray);
+  modifiedQuizes.sort(GetAscSortOrder("name"));
+  renderQuizes(modifiedQuizes);
 }
 
-function GetSortOrder(prop) {
+function handleDescending(target) {
+  target.classList.add("bold-option");
+  removeQuizes();
+  modifiedQuizes.sort(GetDescSortOrder("name"));
+  renderQuizes(modifiedQuizes);
+}
+
+function GetAscSortOrder(prop) {
   return function (a, b) {
     if (a[prop] > b[prop]) {
       return 1;
     } else if (a[prop] < b[prop]) {
+      return -1;
+    }
+    return 0;
+  };
+}
+function GetDescSortOrder(prop) {
+  return function (a, b) {
+    if (a[prop] < b[prop]) {
+      return 1;
+    } else if (a[prop] > b[prop]) {
       return -1;
     }
     return 0;

@@ -78,6 +78,7 @@ body {
   overflow: hidden;
 }
 .arrow {
+  z-index: -1;
   width: clamp(0.8rem, 3vw, 1.1rem);
 }
 
@@ -113,7 +114,7 @@ body {
   -o-transition: transform ease-out 1s;
   font-size: clamp(1rem, 3vw, 1.4rem);
   cursor: pointer;
-  border-left: 3px solid var(--clr-secondary);
+
   width: 100%;
   padding-left: clamp(1.2rem, 3vw, 1.6rem);
   transform: translateX(-100%);
@@ -121,6 +122,12 @@ body {
   -moz-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   -o-transform: translateX(-100%);
+}
+
+.option {
+  border-left: 3px solid var(--clr-secondary);
+  text-align: center;
+  margin-bottom: 0.5em;
 }
 
 .transform-options {
@@ -256,4 +263,9 @@ body {
 
 .hide-quiz {
   display: none;
+}
+
+.bold-option {
+  color: var(--clr-secondary);
+  font-weight: bold;
 }
